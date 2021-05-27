@@ -32,6 +32,7 @@ USE_X_FORWARDED_HOST = True
 ALLOWED_HOSTS = [
     'news.python.sc',
     'localhost',
+    '127.0.0.1',
 ]
 
 
@@ -53,7 +54,7 @@ INSTALLED_APPS = [
     'news',
     'emaildigest',
 
-    
+
 ]
 
 MIDDLEWARE = [
@@ -66,8 +67,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'django.middleware.gzip.GZipMiddleware',
-    #'htmlmin.middleware.HtmlMinifyMiddleware', # TODO: When activated, Django Debug Toolbar has JS issues
+    'django.middleware.gzip.GZipMiddleware',
+    'htmlmin.middleware.HtmlMinifyMiddleware', # TODO: When activated, Django Debug Toolbar has JS issues
     'htmlmin.middleware.MarkRequestMiddleware',
 ]
 
